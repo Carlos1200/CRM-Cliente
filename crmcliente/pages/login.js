@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useMutation, gql } from "@apollo/client";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const AUTENTICAR_USUARIO = gql`
   mutation autenticarUsuario($input: AutenticarInput) {
@@ -62,6 +63,7 @@ const Login = () => {
           router.push("/");
         }, 2000);
       } catch (error) {
+        console.log(error);
         guardarMensaje(error.message.replace("Error: ", ""));
         setTimeout(() => {
           guardarMensaje(null);
@@ -138,6 +140,14 @@ const Login = () => {
               value='Iniciar Sesión'
             />
           </form>
+          <Link href="/nuevacuenta">
+            <a>
+              <p className='text-center text-white text-xs italic'>
+                No tienes una cuenta?{" "}
+                <span className='font-bold'>Registrate</span>
+              </p>
+            </a>
+          </Link>
         </div>
       </div>
     </Layout>
