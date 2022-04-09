@@ -47,7 +47,6 @@ const Login = () => {
             },
           },
         });
-        console.log(data);
         guardarMensaje("Autenticando...");
 
         setTimeout(() => {
@@ -63,7 +62,6 @@ const Login = () => {
           router.push("/");
         }, 2000);
       } catch (error) {
-        console.log(error);
         guardarMensaje(error.message.replace("Error: ", ""));
         setTimeout(() => {
           guardarMensaje(null);

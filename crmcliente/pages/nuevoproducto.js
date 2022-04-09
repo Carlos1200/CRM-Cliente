@@ -124,7 +124,7 @@ const NuevoProducto = () => {
               <label
                 htmlFor='existencia'
                 className='block text-gray text-sm font-bold mb-2'>
-                Candtidad disponible
+                Cantidad disponible
               </label>
               <input
                 type='number'
